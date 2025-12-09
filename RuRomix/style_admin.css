@@ -1,0 +1,498 @@
+.admin-panel {
+            background: #1c2010;
+            border-bottom: 1px solid #30351e;
+            padding: 0;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: #1c2010;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-bottom: 2px solid #30351e;
+        }
+        
+        .admin-tabs li {
+            margin: 0;
+        }
+        
+        .admin-tabs a {
+            display: block;
+            padding: 12px 20px;
+            color: #92ad71;
+            text-decoration: none;
+            border-right: 1px solid #30351e;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+        
+        .admin-tabs a:hover,
+        .admin-tabs a.active {
+            background: #30351e;
+            color: #92ad71;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #1c2010;
+            border-radius: 0 0 10px 10px;
+            border: 2px solid #30351e;
+            border-top: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #30351e;
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: 10px 12px;
+            border: 1px solid #30351e;
+            text-align: left;
+            color: #92ad71;
+        }
+        
+        .admin-table th {
+            background: #30351e;
+            font-weight: 600;
+            color: #92ad71;
+        }
+        
+        .admin-table tr:nth-child(even) {
+            background: #252a16;
+        }
+        
+        .admin-table tr:hover {
+            background: #30351e;
+        }
+        
+        .btn {
+            padding: 6px 12px;
+            margin: 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        .btn-edit {
+            background: #92ad71;
+            color: #121308;
+        }
+        
+        .btn-edit:hover {
+            background: #808367;
+        }
+        
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #c82333;
+        }
+        
+        .report-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .report-card {
+            background: #30351e;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #505539;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-3px);
+            border-color: #92ad71;
+        }
+        
+        .report-card h3 {
+            margin: 0 0 10px 0;
+            color: #92ad71;
+        }
+        
+        .report-card .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #92ad71;
+        }
+        
+        .backup-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .backup-btn {
+            padding: 10px 20px;
+            background: #92ad71;
+            color: #121308;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .backup-btn:hover {
+            background: #808367;
+            transform: translateY(-2px);
+        }
+        
+        .export-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #92ad71;
+            color: #121308;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .export-link:hover {
+            background: #808367;
+            transform: translateY(-2px);
+        }
+        
+        .import-form {
+            background: #30351e;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #505539;
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #92ad71;
+        }
+        
+        .form-group select,
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            background: #1c2010;
+            border: 1px solid #505539;
+            border-radius: 4px;
+            color: #92ad71;
+            font-size: 14px;
+        }
+        
+        .form-group select:focus,
+        .form-group input[type="file"]:focus {
+            outline: none;
+            border-color: #92ad71;
+        }
+        
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #808367;
+            font-size: 12px;
+        }
+        
+        /* Стили для интеграции */
+        .admin-card {
+            background: #30351e;
+            border-radius: 10px;
+            border: 1px solid #505539;
+            margin-bottom: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .admin-card:hover {
+            border-color: #92ad71;
+        }
+        
+        .card-header {
+            padding: 20px;
+            border-bottom: 2px solid #30351e;
+            background-color: #1c2010;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .card-header h3 {
+            margin: 0;
+            color: #92ad71;
+        }
+        
+        .integration-info {
+            padding: 20px;
+        }
+        
+        .integration-info p,
+        .integration-info ul,
+        .integration-info ol {
+            color: #92ad71;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .integration-info strong {
+            color: #92ad71;
+        }
+        
+        .integration-info ul,
+        .integration-info ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .integration-info li {
+            margin-bottom: 5px;
+            color: #808367;
+        }
+        
+        .integration-info code {
+            background: #1c2010;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #92ad71;
+            font-family: monospace;
+        }
+        
+        .integration-form {
+            padding: 0 20px 20px;
+        }
+        
+        .add-btn {
+            background: #92ad71;
+            color: #121308;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .add-btn:hover {
+            background: #808367;
+            transform: translateY(-2px);
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c62828;
+        }
+        
+        .error h4 {
+            margin: 0 0 5px 0;
+            color: #c62828;
+        }
+        
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .result-item {
+            margin-bottom: 10px;
+            color: #92ad71;
+        }
+        
+        .result-item strong {
+            color: #92ad71;
+        }
+        
+        .validation-errors {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #1c2010;
+            border-radius: 3px;
+            border: 1px solid #505539;
+        }
+        
+        .validation-errors strong {
+            color: #92ad71;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .validation-errors ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .validation-errors li {
+            color: #dc3545;
+            margin-bottom: 5px;
+        }
+        
+        .integration-testing {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1c2010;
+            border-radius: 4px;
+            border: 1px solid #30351e;
+        }
+        
+        .integration-testing h4 {
+            color: #92ad71;
+            margin-bottom: 10px;
+        }
+        
+        .integration-testing p,
+        .integration-testing ol {
+            color: #808367;
+        }
+        
+        .integration-testing ol {
+            padding-left: 20px;
+        }
+        
+        .integration-testing li {
+            margin-bottom: 5px;
+        }
+        
+        .integration-testing a {
+            color: #92ad71;
+            text-decoration: none;
+        }
+        
+        .integration-testing a:hover {
+            text-decoration: underline;
+        }
+        
+        .integration-testing code {
+            background: #30351e;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #92ad71;
+            font-family: monospace;
+        }
+        
+        .backup-list {
+            margin-top: 20px;
+        }
+        
+        .backup-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #30351e;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: #30351e;
+            transition: border-color 0.3s;
+        }
+        
+        .backup-item:hover {
+            border-color: #92ad71;
+        }
+        
+        .backup-info {
+            flex-grow: 1;
+        }
+        
+        .backup-info strong {
+            color: #92ad71;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .backup-info small {
+            color: #808367;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .backup-actions-small {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .backup-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: #30351e;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #505539;
+            transition: border-color 0.3s;
+        }
+        
+        .stat-box:hover {
+            border-color: #92ad71;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 10px 0;
+            color: #92ad71;
+            font-size: 14px;
+        }
+        
+        .stat-box .number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #92ad71;
+        }
+        
+        h2 {
+            color: #92ad71;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #30351e;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #92ad71;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #92ad71;
+            margin-bottom: 10px;
+        }

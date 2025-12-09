@@ -1,0 +1,293 @@
+/* Стили для профиля пользователя */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: #30351e;
+    border-radius: 15px;
+    border: 1px solid #505539;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #505539;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #808367;
+    color: #1c2010;
+    font-weight: bold;
+    font-size: 60px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-username {
+    font-size: 32px;
+    color: #92ad71;
+    margin-bottom: 10px;
+}
+
+.profile-role, .profile-join-date {
+    font-size: 16px;
+    color: #808367;
+    margin-bottom: 5px;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-count {
+    display: block;
+    font-size: 24px;
+    color: #92ad71;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #808367;
+}
+
+.profile-actions .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 140px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-subscribe {
+    background: linear-gradient(135deg, #92ad71 0%, #7a9559 100%);
+    color: #121308;
+    box-shadow: 0 4px 15px rgba(146, 173, 113, 0.3);
+}
+
+.btn-unsubscribe {
+    background: linear-gradient(135deg, #505539 0%, #3a412a 100%);
+    color: #92ad71;
+    border: 2px solid #92ad71;
+    box-shadow: 0 4px 15px rgba(80, 85, 57, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(146, 173, 113, 0.4);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-unsubscribe:hover {
+    box-shadow: 0 6px 20px rgba(80, 85, 57, 0.4);
+}
+
+/* Анимация для кнопки */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
+.user-comics-section {
+    margin-top: 30px;
+}
+
+/* Стили для страницы подписок */
+.subscriptions-container {
+    margin-top: 20px;
+}
+
+.subscription-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #505539;
+    padding-bottom: 10px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #92ad71;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tab-button.active {
+    background-color: #30351e;
+    border-bottom: 3px solid #92ad71;
+}
+
+.tab-button:hover {
+    background-color: #30351e;
+    transform: translateY(-2px);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Стили для страницы авторов */
+.authors-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    background-color: #30351e;
+    border: 1px solid #505539;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: #92ad71;
+    min-width: 150px;
+}
+
+/* Стили для сообщений */
+#message-container {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.success-message, .error-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
+/* Адаптивность для профиля */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-avatar-placeholder {
+        font-size: 40px;
+    }
+    
+    .profile-username {
+        font-size: 24px;
+    }
+    
+    .profile-stats {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .stat-count {
+        font-size: 20px;
+    }
+    
+    .profile-actions .btn {
+        min-width: 120px;
+        padding: 10px 20px;
+    }
+    
+    .subscription-tabs {
+        flex-direction: column;
+    }
+    
+    #message-container {
+        position: fixed;
+        top: 80px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+    }
+}

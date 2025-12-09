@@ -1,0 +1,499 @@
+/* Общие стили для страниц регистрации и входа */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121308;
+    color: #92ad71;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #1c2010;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #30351e;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #92ad71;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #92ad71;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #30351e;
+}
+
+.main-content {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.page-title {
+    font-size: 36px;
+    color: #92ad71;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Контейнеры форм */
+.register-container,
+.login-container {
+    background-color: #1c2010;
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 700px;
+    border: 2px solid #30351e;
+}
+
+.login-container {
+    max-width: 500px;
+}
+
+/* Секция аватара (только для регистрации) */
+.avatar-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.avatar-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #505539;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #92ad71;
+    font-size: 36px;
+    font-weight: bold;
+    border: 3px solid #92ad71;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    font-size: 40px;
+}
+
+.avatar-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.avatar-input {
+    display: none;
+}
+
+.avatar-label {
+    background-color: #30351e;
+    color: #92ad71;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.avatar-label:hover {
+    background-color: #505539;
+}
+
+.avatar-remove {
+    background-color: transparent;
+    color: #808367;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.avatar-remove:hover {
+    color: #92ad71;
+}
+
+/* Секции формы */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #92ad71;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #30351e;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #92ad71;
+    font-weight: bold;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #30351e;
+    border: 1px solid #505539;
+    border-radius: 8px;
+    color: #92ad71;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #92ad71;
+}
+
+.form-input::placeholder {
+    color: #808367;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.password-toggle {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #808367;
+    cursor: pointer;
+}
+
+/* Стили для капчи */
+.captcha-section {
+    background-color: #30351e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.captcha-instructions {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #92ad71;
+    font-size: 14px;
+}
+
+.captcha-preview {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #808367;
+    font-size: 12px;
+}
+
+.captcha-original {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 10px;
+    border: 2px solid #505539;
+    border-radius: 8px;
+    background-image: url('captcha/5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Контейнеры для капчи - 2 ряда по 2 ячейки */
+.captcha-container,
+.captcha-target {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 15px auto;
+    width: fit-content;
+}
+
+.captcha-item {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #505539;
+    border-radius: 8px;
+    cursor: grab;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    user-select: none;
+}
+
+.captcha-item:hover {
+    border-color: #92ad71;
+    transform: scale(1.05);
+}
+
+.captcha-item.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.captcha-slot {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #505539;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    background-color: rgba(28, 32, 16, 0.5);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.captcha-slot.filled {
+    border-style: solid;
+    border-color: #92ad71;
+    background-color: transparent;
+}
+
+.captcha-slot.over {
+    background-color: #505539;
+}
+
+.captcha-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.captcha-status {
+    text-align: center;
+    margin-top: 10px;
+    min-height: 20px;
+    font-size: 14px;
+}
+
+.captcha-status.correct {
+    color: #92ad71;
+    font-weight: bold;
+}
+
+.captcha-status.incorrect {
+    color: #ff6b6b;
+}
+
+/* Кнопки */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #30351e;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #92ad71;
+    color: #121308;
+}
+
+.btn-primary:hover {
+    background-color: #808367;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #30351e;
+    color: #92ad71;
+    border: 1px solid #505539;
+}
+
+.btn-secondary:hover {
+    background-color: #505539;
+}
+
+.btn-captcha {
+    background-color: #505539;
+    color: #92ad71;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.btn-captcha:hover {
+    background-color: #606559;
+}
+
+/* Секции ссылок */
+.guest-section,
+.register-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #30351e;
+}
+
+.guest-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guest-link,
+.register-link {
+    color: #92ad71;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.guest-link:hover,
+.register-link:hover {
+    color: #808367;
+    text-decoration: underline;
+}
+
+/* Сообщения */
+.success-message,
+.error-message {
+    background-color: #1c2010;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    border: 1px solid #92ad71;
+    color: #92ad71;
+}
+
+.error-message {
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+}
+
+.role-description {
+    font-size: 14px;
+    color: #808367;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-left {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .register-container,
+    .login-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .form-row,
+    .form-actions {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .captcha-item,
+    .captcha-slot {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .captcha-original {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .captcha-item,
+    .captcha-slot {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .captcha-original {
+        width: 120px;
+        height: 120px;
+    }
+}

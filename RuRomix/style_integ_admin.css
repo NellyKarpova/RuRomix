@@ -1,0 +1,297 @@
+.admin-panel {
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 0;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: #343a40;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .admin-tabs li {
+            margin: 0;
+        }
+        
+        .admin-tabs a {
+            display: block;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            border-right: 1px solid #495057;
+            transition: background 0.3s;
+        }
+        
+        .admin-tabs a:hover,
+        .admin-tabs a.active {
+            background: #495057;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: 8px 12px;
+            border: 1px solid #dee2e6;
+            text-align: left;
+        }
+        
+        .admin-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .admin-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .btn {
+            padding: 6px 12px;
+            margin: 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .btn-edit {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .report-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .report-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .report-card h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .report-card .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .backup-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .backup-btn {
+            padding: 10px 20px;
+            background: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .backup-btn:hover {
+            background: #138496;
+        }
+        
+        .export-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        
+        .export-link:hover {
+            background: #218838;
+        }
+        
+        .import-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group select,
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* Стили для интеграции */
+        .admin-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .card-header h3 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .integration-info {
+            padding: 20px;
+        }
+        
+        .integration-form {
+            padding: 0 20px 20px;
+        }
+        
+        .add-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .add-btn:hover {
+            background: #0056b3;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result-item {
+            margin-bottom: 10px;
+        }
+        
+        .validation-errors {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ffe6e6;
+            border-radius: 3px;
+        }
+        
+        .integration-testing {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .backup-list {
+            margin-top: 20px;
+        }
+        
+        .backup-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: #f8f9fa;
+        }
+        
+        .backup-info {
+            flex-grow: 1;
+        }
+        
+        .backup-actions-small {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .backup-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .stat-box h4 {
+            margin: 0 0 5px 0;
+            color: #495057;
+        }
+        
+        .stat-box .number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+        }

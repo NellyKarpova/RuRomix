@@ -1,0 +1,673 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #30351e;
+    background-image: url('Просто фон.jpg');
+    color: #92ad71;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #1c2010;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #30351e;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #92ad71;
+    text-decoration: none;
+}
+
+/* Стили для формы поиска */
+.search-form {
+    display: flex;
+}
+
+.search-box {
+    background-color: #30351e;
+    border: 1px solid #505539;
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 300px;
+    color: #92ad71;
+    font-size: 14px;
+}
+
+.search-box::placeholder {
+    color: #808367;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #92ad71;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #30351e;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Стили для уведомлений */
+.notifications-container {
+    position: relative;
+}
+
+.notifications-icon {
+    position: relative;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.notifications-icon:hover {
+    background-color: #30351e;
+}
+
+.notifications-icon img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.notifications-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 400px;
+    background: #1c2010;
+    border: 2px solid #30351e;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+    margin-top: 10px;
+}
+
+.notifications-dropdown.show {
+    display: block;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 2px solid #30351e;
+    background-color: #1c2010;
+}
+
+.notifications-header h3 {
+    margin: 0;
+    color: #92ad71;
+    font-size: 16px;
+}
+
+.mark-read-btn {
+    background: #92ad71;
+    color: #121308;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.mark-read-btn:hover {
+    background: #808367;
+    transform: translateY(-1px);
+}
+
+.notifications-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 15px;
+    border-bottom: 1px solid #30351e;
+    transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+    background-color: #30351e;
+}
+
+.notification-item.unread {
+    background-color: #30351e;
+    border-left: 3px solid #92ad71;
+}
+
+.notification-item.empty {
+    justify-content: center;
+    color: #808367;
+    font-style: italic;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content p {
+    margin: 0 0 5px 0;
+    color: #92ad71;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.notification-time {
+    color: #808367;
+    font-size: 12px;
+}
+
+.mark-read-individual {
+    background: none;
+    border: 1px solid #92ad71;
+    color: #92ad71;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.mark-read-individual:hover {
+    background: #92ad71;
+    color: #121308;
+}
+
+/* Стили notifications-footer удалены */
+
+/* Стили для информации о пользователе */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.user-info:hover {
+    background-color: #30351e;
+}
+
+.username {
+    font-size: 14px;
+    color: #92ad71;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #505539;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #92ad71;
+    font-weight: bold;
+    border: 2px solid #92ad71;
+    transition: all 0.3s;
+    background-size: cover;
+    background-position: center;
+}
+
+.user-info:hover .avatar {
+    background-color: #808367;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: #1c2010;
+    border: 2px solid #30351e;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+    margin-top: 10px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: #92ad71;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: #30351e;
+}
+
+.dropdown-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #30351e;
+    margin: 5px 0;
+}
+
+/* Стили для ссылок авторизации */
+.auth-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.auth-link {
+    color: #92ad71;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.auth-link.login {
+    background-color: #30351e;
+    border: 1px solid #505539;
+}
+
+.auth-link.register {
+    background-color: #92ad71;
+    color: #121308;
+}
+
+.auth-link:hover {
+    transform: translateY(-2px);
+}
+
+.main-content {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.site-title {
+    font-size: 48px;
+    color: #92ad71;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.main-container {
+    background-color: #1c2010;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    border: 2px solid #30351e;
+}
+
+/* Стили для результатов поиска */
+.search-results {
+    margin-top: 20px;
+}
+
+.search-section {
+    margin-bottom: 40px;
+}
+
+.subsection-title {
+    font-size: 20px;
+    color: #92ad71;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #505539;
+    padding-bottom: 10px;
+}
+
+/* Стили для сетки пользователей */
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.user-card {
+    background-color: #30351e;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #505539;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: inherit;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    border-color: #92ad71;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #505539;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #808367;
+    color: #1c2010;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.user-info-card {
+    flex: 1;
+}
+
+.username-card {
+    font-size: 18px;
+    color: #92ad71;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.user-role {
+    font-size: 14px;
+    color: #808367;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.user-join-date {
+    font-size: 12px;
+    color: #808367;
+}
+
+.comics-section {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #92ad71;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.comic-card {
+    background-color: #30351e;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #505539;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.comic-card:hover {
+    transform: translateY(-5px);
+    border-color: #92ad71;
+}
+
+.comic-cover {
+    width: 100%;
+    height: 250px;
+    background-color: #505539;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #808367;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.comic-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.comic-title {
+    font-size: 16px;
+    color: #92ad71;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.comic-author {
+    font-size: 12px;
+    color: #808367;
+}
+
+/* Стили для описания комикса в результатах поиска */
+.comic-description {
+    font-size: 12px;
+    color: #808367;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.comic-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #808367;
+}
+
+.comic-status {
+    padding: 2px 8px;
+    background-color: #505539;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+.subscribe-form {
+    margin: 0;
+}
+
+/* Стили для сообщений */
+.success-message {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border-left: 4px solid #2e7d32;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    border-left: 4px solid #c62828;
+}
+
+.no-content {
+    text-align: center;
+    padding: 40px;
+    color: #808367;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #1c2010;
+    padding: 20px 30px;
+    border-top: 2px solid #30351e;
+    color: #92ad71;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-left {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-left, .header-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .search-box {
+        width: 200px;
+    }
+    
+    .notifications-dropdown {
+        width: 350px;
+        right: -50%;
+    }
+    
+    .dropdown-menu {
+        width: 200px;
+    }
+    
+    .main-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .comics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .users-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .user-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .user-info-card {
+        width: 100%;
+    }
+    
+    footer {
+        padding: 15px;
+        text-align: center;
+    }
+}

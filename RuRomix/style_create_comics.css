@@ -1,0 +1,237 @@
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #808367;
+            font-size: 14px;
+        }
+        
+        .step-number {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .step.active .step-number {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .step.completed .step-number {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .form-step {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .step-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .step-btn.prev {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .step-btn.next {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .step-btn.submit {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .step-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .step-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .form-progress {
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .form-progress-bar {
+            height: 100%;
+            background: #4CAF50;
+            width: 33.33%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Увеличиваем модальное окно */
+        .modal-content {
+            max-height: 90vh;
+            width: 500px;
+            max-width: 90vw;
+        }
+        
+        .modal-body {
+            max-height: calc(90vh - 130px);
+            overflow-y: auto;
+            padding: 0 20px;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Улучшаем внешний вид полей формы */
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .file-upload {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border 0.3s;
+        }
+        
+        .file-upload:hover {
+            border-color: #4CAF50;
+        }
+        
+        .file-upload input {
+            display: none;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .file-upload-icon {
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        
+        .error-message {
+            color: #ff3333;
+            background-color: #ffe6e6;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .success-message {
+            color: #28a745;
+            background-color: #e6ffe6;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        /* Стили для ссылки на страницу комикса */
+        .comic-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        
+        .comic-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .comic-link:hover .comic-title {
+            color: #4CAF50;
+        }
+        
+        .comic-cover-link {
+            display: block;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .comic-cover-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .comic-cover-link:hover img {
+            transform: scale(1.05);
+        }
